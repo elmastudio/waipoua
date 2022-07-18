@@ -47,6 +47,8 @@
 <body <?php body_class(); ?>>
 
 	<div id="site-nav-wrap" class="clearfix">
+		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'waipoua' ); ?></a>
+
 		<div id="site-nav-container">
 			<?php if ( has_nav_menu( 'primary' ) ) : ?>
 			<a href="<?php echo home_url( '/' ); ?>" id="home-btn"><?php _e('Home', 'waipoua') ?></a>
