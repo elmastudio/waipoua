@@ -8,11 +8,7 @@
  * @since Waipoua 1.0
  */
 ?><!DOCTYPE html>
-<!--[if lte IE 8]>
-<html class="ie" <?php language_attributes(); ?>>
-<![endif]-->
 <html <?php language_attributes(); ?>>
-<!--<![endif]-->
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -29,12 +25,6 @@
 	if( $options['custom_apple_icon'] != '' ) : ?>
 <link rel="apple-touch-icon" href="<?php echo $options['custom_apple_icon']; ?>" />
 <?php endif  ?>
-
-<!-- HTML5 enabling script for older IE -->
-<!--[if lt IE 9]>
-<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-
 <?php
 	wp_enqueue_script('jquery');
 	if ( is_singular() && get_option( 'thread_comments' ) )
