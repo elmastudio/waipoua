@@ -46,6 +46,8 @@
 
 <body <?php body_class(); ?>>
 
+	<?php wp_body_open(); ?>
+
 	<div id="site-nav-wrap" class="clearfix">
 		<div id="site-nav-container">
 			<?php if ( has_nav_menu( 'primary' ) ) : ?>
