@@ -1042,3 +1042,13 @@ register_widget('waipoua_video');
 }
 
 register_widget('waipoua_sociallinks');
+
+/*---------------------------------------------------------------------------------------------*/
+/* Backwards compatibility for WordPress pre 5.2 versions missing the `wp_body_open()` function
+/*---------------------------------------------------------------------------------------------*/
+
+if ( ! function_exists( 'wp_body_open' ) ) {
+	function wp_body_open() {
+		do_action( 'wp_body_open' );
+	}
+}
