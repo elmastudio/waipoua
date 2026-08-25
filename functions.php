@@ -515,6 +515,7 @@ class waipoua_flickr extends WP_Widget {
 	}
 
 	public function widget($args, $instance) {
+		/* __php8_keys */ $instance = wp_parse_args( (array) $instance, array( 'title' => '', 'id' => '', 'linktext' => '', 'linkurl' => '', 'number' => '', 'type' => '', 'sorting' => '' ) );
 		extract( $args );
 		$title = $instance['title'];
 		$id = $instance['id'];
@@ -542,6 +543,7 @@ class waipoua_flickr extends WP_Widget {
 	 }
 
 	 function form($instance) {
+		/* __php8_keys */ $instance = wp_parse_args( (array) $instance, array( 'title' => '', 'id' => '', 'linktext' => '', 'linkurl' => '', 'number' => '', 'type' => '', 'sorting' => '' ) );
 		$title = esc_attr($instance['title']);
 		$id = esc_attr($instance['id']);
 		$linktext = esc_attr($instance['linktext']);
@@ -614,6 +616,7 @@ class waipoua_video extends WP_Widget {
 	}
 
 	public function widget($args, $instance) {
+		/* __php8_keys */ $instance = wp_parse_args( (array) $instance, array( 'title' => '', 'embedcode' => '' ) );
 		extract( $args );
 		$title = $instance['title'];
 		$embedcode = $instance['embedcode'];
@@ -635,6 +638,7 @@ class waipoua_video extends WP_Widget {
 	 }
 
 	 function form($instance) {
+		/* __php8_keys */ $instance = wp_parse_args( (array) $instance, array( 'title' => '', 'embedcode' => '' ) );
 		$title = esc_attr($instance['title']);
 		$embedcode = esc_attr($instance['embedcode']);
 		?>
@@ -669,6 +673,7 @@ register_widget('waipoua_video');
 	}
 
 	public function widget($args, $instance) {
+		/* __php8_keys */ $instance = wp_parse_args( (array) $instance, array( 'title' => '', 'twitter' => '', 'facebook' => '', 'googleplus' => '', 'flickr' => '', 'instagram' => '', 'picasa' => '', 'fivehundredpx' => '', 'youtube' => '', 'vimeo' => '', 'dribbble' => '', 'ffffound' => '', 'pinterest' => '', 'zootool' => '', 'behance' => '', 'deviantart' => '', 'squidoo' => '', 'slideshare' => '', 'lastfm' => '', 'grooveshark' => '', 'soundcloud' => '', 'foursquare' => '', 'github' => '', 'linkedin' => '', 'xing' => '', 'wordpress' => '', 'tumblr' => '', 'rss' => '', 'rsscomments' => '' ) );
 		extract( $args );
 		$title = $instance['title'];
 		$twitter = $instance['twitter'];
@@ -860,6 +865,7 @@ register_widget('waipoua_video');
 	 }
 
 	 function form($instance) {
+		/* __php8_keys */ $instance = wp_parse_args( (array) $instance, array( 'title' => '', 'twitter' => '', 'facebook' => '', 'googleplus' => '', 'flickr' => '', 'instagram' => '', 'picasa' => '', 'fivehundredpx' => '', 'youtube' => '', 'vimeo' => '', 'dribbble' => '', 'ffffound' => '', 'pinterest' => '', 'zootool' => '', 'behance' => '', 'deviantart' => '', 'squidoo' => '', 'slideshare' => '', 'lastfm' => '', 'grooveshark' => '', 'soundcloud' => '', 'foursquare' => '', 'github' => '', 'linkedin' => '', 'xing' => '', 'wordpress' => '', 'tumblr' => '', 'rss' => '', 'rsscomments' => '' ) );
 		$title = esc_attr($instance['title']);
 		$twitter = esc_attr($instance['twitter']);
 		$facebook = esc_attr($instance['facebook']);
@@ -1042,3 +1048,14 @@ register_widget('waipoua_video');
 }
 
 register_widget('waipoua_sociallinks');
+
+/* __php8_option_defaults: never let the theme options be false or miss a key (PHP 8). */
+function waipoua_php8_option_defaults( $options = array() ) {
+	$fallback = array_fill_keys( array( 'share-posts', 'theme_layout', 'custom_favicon', 'custom_apple_icon', 'custom_logo', 'share-pages', 'link_color', 'navibg_color', 'featured_headline', 'custom_footertext', 'share-singleposts' ), '' );
+	if ( function_exists( 'waipoua_get_default_theme_options' ) ) {
+		$fallback = array_merge( $fallback, (array) waipoua_get_default_theme_options() );
+	}
+	return wp_parse_args( is_array( $options ) ? $options : array(), $fallback );
+}
+add_filter( 'default_option_waipoua_theme_options', 'waipoua_php8_option_defaults' );
+add_filter( 'option_waipoua_theme_options', 'waipoua_php8_option_defaults' );
