@@ -3032,7 +3032,7 @@ body {
 	-webkit-background-size: 18px 18px;
 }
 #site-nav-container #s:focus {
-	background:#E7E7E6 url(images/x2/search-grey.png) 10px 14px no-repeat;
+	background:#fff url(images/x2/search-grey.png) 10px 14px no-repeat;
 	-webkit-background-size: 18px 18px;
 }
 .widget_search #s {
@@ -3164,6 +3164,19 @@ ul.sociallinks li a.rsscomments {
 /*-----------------------------------------------------------------------------------*/
 /*	Print
 /*-----------------------------------------------------------------------------------*/
+/* Retina + desktop: header search stays red */
+@media only screen and (min-width: 1170px) and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-width: 1170px) and (min-resolution: 144dpi) {
+#site-nav-container #s {
+	background:#f55243 url(images/x2/search-white.png) 10px 10px no-repeat;
+	-webkit-background-size: 18px 18px;
+	background-size: 18px 18px;
+}
+#site-nav-container #s:focus {
+	background:#fff url(images/x2/search-lightgrey.png) 10px 10px no-repeat;
+	-webkit-background-size: 18px 18px;
+	background-size: 18px 18px;
+}
+}
 @media print {
 body {background: none !important; font-size: 14pt;}
 #header { background:none !important;}
