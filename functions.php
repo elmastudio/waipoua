@@ -1059,3 +1059,14 @@ function waipoua_php8_option_defaults( $options = array() ) {
 }
 add_filter( 'default_option_waipoua_theme_options', 'waipoua_php8_option_defaults' );
 add_filter( 'option_waipoua_theme_options', 'waipoua_php8_option_defaults' );
+
+
+/*---------------------------------------------------------------------------------------------*/
+/* Backwards compatibility for WordPress pre 5.2 versions missing the `wp_body_open()` function
+/*---------------------------------------------------------------------------------------------*/
+
+if ( ! function_exists( 'wp_body_open' ) ) {
+	function wp_body_open() {
+		do_action( 'wp_body_open' );
+	}
+}

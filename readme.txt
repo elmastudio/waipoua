@@ -9,6 +9,19 @@ Please ask all theme questions in our theme support forum: https://elmastudio.ti
 
 Waipoua Changelog:
 
+Version 1.1.6 (04/09/2026)
+--------------------------------------------------------------------------------------------
+- Fix: The theme package on GitHub was missing single.php and carried an old stylesheet without block styles. Both restored from the 1.1.3 release.
+- Fix: Gallery block layout on WordPress 6.1 and later.
+- New: wp_body_open() hook in the header, and a "Skip to content" link for keyboard and screen reader users.
+- Enhance: Visitors can zoom the page again on mobile devices (viewport no longer locks the scale).
+- Remove: Support code for Internet Explorer 8 and older.
+- Thanks to Bernhard Kau and Torsten Landsiedel for reporting and contributing these on GitHub.
+
+Version 1.1.5 (27/08/2026)
+--------------------------------------------------------------------------------------------
+- Fix: Header search field stays red on Retina desktop screens.
+
 Version 1.1.4 (25/08/2026)
 --------------------------------------------------------------------------------------------
 - Fix: PHP 8 compatibility. Theme options and widget settings no longer trigger warnings; attachment pages, related posts and comment display fixed where affected.
