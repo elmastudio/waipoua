@@ -12,7 +12,6 @@ Waipoua Changelog:
 Version 1.1.6 (04/09/2026)
 --------------------------------------------------------------------------------------------
 - Fix: The theme package on GitHub was missing single.php and carried an old stylesheet without block styles. Both restored from the 1.1.3 release.
-- Fix: Gallery block layout on WordPress 6.1 and later.
 - New: wp_body_open() hook in the header, and a "Skip to content" link for keyboard and screen reader users.
 - Enhance: Visitors can zoom the page again on mobile devices (viewport no longer locks the scale).
 - Remove: Support code for Internet Explorer 8 and older.
